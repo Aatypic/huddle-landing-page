@@ -43,7 +43,7 @@ dd {
 	margin: 0;
 }
 
-ul {
+.hero__nav {
 	list-style: none;
 	padding: 0;
 	margin: 0;
@@ -69,21 +69,6 @@ img {
 a {
 	text-decoration: none;
 }
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-	html:focus-within {
-		scroll-behavior: auto;
-	}
-
-	*,
-	*::before,
-	*::after {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
-}
 
 /* general styling */
 
@@ -98,7 +83,7 @@ body {
 	align-items: center;
 	overflow: hidden;
 }
-main {
+.hero {
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 2rem 30vh auto auto;
@@ -116,25 +101,18 @@ header {
 	width: 35vw;
 }
 
-.mockup {
+.hero__mockup {
 	grid-area: mockup;
 	background-image: url(images/illustration-mockups.svg);
 	background-repeat: no-repeat;
 	background-size: contain;
-	width: 100%;
-}
-picture {
-	grid-area: mockup;
-	border: 1px solid black;
-}
-picture img {
-	background-size: auto;
 }
 
 h1 {
 	display: flex;
 	flex-direction: column;
 	font-size: clamp(1.6rem, 3vw, 3rem);
+	font-weight: var(--fweight-sbold);
 }
 
 h1,
@@ -166,7 +144,7 @@ h1,
 	color: hsl(0, 0%, 100%);
 }
 
-ul {
+.hero__nav {
 	display: flex;
 	justify-self: center;
 	gap: 1rem;
@@ -183,7 +161,6 @@ ion-icon {
 	padding: 0.425em;
 	border: 2px solid white;
 	border-radius: 100vh;
-
 	transition: 350ms ease;
 }
 
@@ -223,7 +200,7 @@ footer {
 
 /* special to mobile */
 @media screen and (max-width: 45em) {
-	.mockup {
+	.hero__mockup {
 		background-position: center;
 	}
 	.hero__cta {
@@ -245,7 +222,7 @@ footer {
 		background-image: url(images/bg-desktop.svg);
 		background-size: cover;
 	}
-	main {
+	.hero {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-rows: auto;
 		min-height: inherit;
@@ -265,7 +242,7 @@ footer {
 		font-size: 1.125rem;
 	}
 
-	ul {
+	.hero__nav {
 		justify-self: end;
 	}
 	ion-icon {
@@ -275,7 +252,7 @@ footer {
 
 /* very large screen */
 @media screen and (min-width: 90em) {
-	main {
+	.hero {
 		grid-template-rows: 1fr 63vh auto;
 	}
 	.hero__cta {
@@ -283,7 +260,7 @@ footer {
 		padding-left: 3rem;
 	}
 	.hero__cta p,
-	ul {
+	.hero__nav {
 		margin-right: 10rem;
 	}
 	body {
