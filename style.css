@@ -217,6 +217,10 @@ footer {
 	color: hsl(0, 0%, 100%);
 }
 
+.attribution a:hover {
+	color: var(--clr-primary100);
+}
+
 /* special to mobile */
 @media screen and (max-width: 45em) {
 	.mockup {
